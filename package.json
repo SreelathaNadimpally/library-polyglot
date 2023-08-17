@@ -39,7 +39,7 @@
     "trailingComma": "es5"
   },
   "name": "polyglot-ui",
-  "author": "Yashwanth Sagar",
+  "author": "polyglot",
   "module": "dist/polyglot-ui.esm.js",
   "size-limit": [
     {
