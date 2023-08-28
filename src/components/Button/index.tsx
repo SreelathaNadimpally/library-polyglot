@@ -1,22 +1,43 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 
-export type ButtonProps = {
-  type: "button";
-  value: any;
-  onClick: React.MouseEventHandler<HTMLInputElement>;
-};
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  onClick: () => void;
+  primary?: boolean;
+  label?: string;
+  size: 'small' | 'medium' | 'large';
+  backgroundColor?: string;
+  name: string;
+  className?: string;
+  style?: React.CSSProperties;
+  variant: 'default' | 'primary' | 'success' | 'danger' | 'warning';
+}
 
-const Button: React.FC<ButtonProps> = ({ type, value, onClick, ...rest }) => {
+const Button = ({
+  onClick,
+  disabled,
+  children,
+  style,
+  className,
+  variant,
+  ...rest
+}: ButtonProps) => {
+  const handleClick = () => {
+    onClick();
+  };
+
   return (
-    <React.Fragment>
-      <input
-        style={{ color: "blueviolet" }}
-        type={type}
-        value={value}
-        onClick={onClick}
-        {...rest}
-      />
-    </React.Fragment>
+    <button
+      style={{
+        backgroundColor: 'primary',
+        //  variant === 'primary'? 'blue':'gray'
+      }}
+      onClick={handleClick}
+      disabled={disabled}
+      className={className}
+      {...rest}
+    >
+      {children}
+    </button>
   );
 };
 

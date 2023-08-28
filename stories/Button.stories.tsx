@@ -1,40 +1,78 @@
 import React from 'react';
-import type { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import Button, { ButtonProps } from '../src/components/Button';
 
 interface ExtendedButtonProps extends ButtonProps {
-  variant: string;
+  variant: "default" | "primary" | "success" | "danger" | "warning";
   style: {
     backgroundColor: string;
+    color: string;
   };
+  value: string;
 }
 
-const meta: Meta<ExtendedButtonProps> = {
-  title: 'Button',
-  component: Button,
-  args: {
-    variant: 'default',
-    style: {
-      backgroundColor: 'blueviolet',
-    },
-  },
-};
-export default meta;
-
-export const Basic: StoryFn<ExtendedButtonProps> = (args) => <Button {...args}>Click Me</Button>;
+export const Basic: StoryFn<ExtendedButtonProps> = (args) => (
+  <Button {...args}>Click Me</Button>
+);
 Basic.args = {
   type: 'button',
-  value: 'Click Me',
   onClick: () => {},
+  value: 'Click Me',
+  variant: 'default',
+  style: {
+    backgroundColor: 'transparent',
+    color: 'black',
+  },
 };
 
-export const WithVariant: StoryFn<ExtendedButtonProps> = (args) => <Button {...args}>Click Me</Button>;
-WithVariant.args = {
+export const WithPrimaryVariant: StoryFn<ExtendedButtonProps> = (args) => (
+  <Button {...args}>Click Me</Button>
+);
+WithPrimaryVariant.args = {
   type: 'button',
-  value: 'Click Me',
   onClick: () => {},
   variant: 'primary',
   style: {
+    backgroundColor: 'blue',
+    color: 'white',
+  },
+};
+
+export const WithSuccessVariant: StoryFn<ExtendedButtonProps> = (args) => (
+  <Button {...args}>Click Me</Button>
+);
+WithSuccessVariant.args = {
+  type: 'button',
+  onClick: () => {},
+  variant: 'success',
+  style: {
     backgroundColor: 'green',
+    color: 'white',
+  },
+};
+
+export const WithDangerVariant: StoryFn<ExtendedButtonProps> = (args) => (
+  <Button {...args}>Click Me</Button>
+);
+WithDangerVariant.args = {
+  type: 'button',
+  onClick: () => {},
+  variant: 'danger',
+  style: {
+    backgroundColor: 'red',
+    color: 'white',
+  },
+};
+
+export const WithWarningVariant: StoryFn<ExtendedButtonProps> = (args) => (
+  <Button {...args}>Click Me</Button>
+);
+WithWarningVariant.args = {
+  type: 'button',
+  onClick: () => {},
+  variant: 'warning',
+  style: {
+    backgroundColor: 'orange',
+    color: 'white',
   },
 };

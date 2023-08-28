@@ -1,11 +1,13 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Default as Thing } from '../stories/Thing.stories';
+import InputField from "../src/components/InputField"
 
-describe('Thing', () => {
+describe('InputField', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Thing />, div);
+    ReactDOM.render(<InputField type={'text'} value={undefined} onChange={(): void => {
+      throw new Error('Function not implemented.');
+    }} />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 });
