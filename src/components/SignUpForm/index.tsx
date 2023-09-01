@@ -1,9 +1,10 @@
 import React, { useState, ChangeEvent } from 'react';
+import Button from '../Button';
+import TextInput from '../Text-Input';
 import EmailInput from '../Email-Input';
 import PasswordInput from '../Password-Input';
-import Button from '../Button';
 import RadioInput from '../RadioInput';
-import TextInput from '../Text-Input';
+
 
 export interface FormData {
   firstName: string;
@@ -15,6 +16,7 @@ export interface FormData {
 
 const SignUpForm: React.FC = () => {
   const [selectedValue, setSelectedValue] = useState<string>('male');
+
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -51,10 +53,10 @@ const SignUpForm: React.FC = () => {
     }));
   };
 
+  const handleRadioChange = (value: string) => {
+    setSelectedValue(value);
+  };
 
-const handleRadioChange: (value: string) => void = (value) => {
-  setSelectedValue(value);
-};
 
   const handleEmailInputChangeWrapper = (value: string) => {
     handleEmailInputChange(value);
