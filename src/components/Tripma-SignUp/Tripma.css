@@ -1,116 +1,168 @@
-@import '~@fortawesome/fontawesome-free/css/all.min.css';
-
 
 .signup-container {
-    width: 520px;
-    height: auto;
-    border: 1px solid #ccc;
-    padding: 40px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    margin: 0 auto;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-   
-  }
-/* 
-  .signup-container label {
-    margin-bottom: 5px;
-  }
-   */
-  h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: grey;
-    text-align: left;
-  }
-  
-  h3 {
-    font-size: 16px;
-    font-weight: normal;
-    text-align: left;
-    margin-bottom: 20px;
-    color: grey;
-  }
+  width: 568px;
+  height: 675px;
+  border: 1px solid #ccc;
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto; 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
 
-  input[type="checkbox"] {
-    margin-right: 6px; 
-  }
+.header {
+  height: auto;
+  width: 488px;
+  padding-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
-  /* label {
-    margin-bottom: 1px; 
-  } */
-  
+.header h3 {
+  clear: both;
+}
 
-  input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
 
-  input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  label {
-    display: flex; 
-    align-items: center; 
-    margin-bottom: 8px; 
-  }
-  
-  .terms-link {
-    color: blue;
-    text-decoration: none;
-  }
-  
-  .signup-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .signup-button:hover {
-    background-color: #0056b3;
-    width: 100%;
-  }
-  
-  .social-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    color: #0056b3; 
-    width: 100%;
-  }
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  color: #6E7491;
+  text-align: left;
+}
 
-  .social-buttons button {
-    color: #0056b3; 
-    width: 100%;
-  }
-  
-  .social-button {
-    margin: 5px 0;
-    border: 2px solid #0056b3; 
-    border-radius: 4px;
-    padding: 10px; 
-    width: 100%;
-  }
-  .btn{
-    width: 100%;
-  }
-  
-  .social-icon {
-    margin-right: 10px;
-    font-size: 18px;
-  }
-  
+.CheckIcon {
+  margin-left: auto;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: normal;
+  text-align: left;
+  margin-bottom: 20px;
+  color: #7C8DB0;
+}
+
+input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+input[type="email"] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 12px; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="password"] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 12px; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px !important;
+  padding: 0;
+}
+
+.terms-link {
+  color: #605DEC;
+  text-decoration: none;
+}
+
+.signup-button {
+  box-sizing: border-box;
+  background-color: #605DEC;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.signup-button:hover {
+  background-color: #5242BA; /* Change the hover color */
+  width: 100%;
+}
+
+p {
+  position: relative;
+  text-align: center;
+}
+
+p::before,
+p::after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 43%;
+  border-top: 1px solid #d9d9d9;
+  margin: 0 10px;
+}
+
+.social-buttons {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #605DEC;
+  width: 100%;
+  background: none;
+}
+
+.social-buttons button {
+  color: #605DEC;
+  width: 100%;
+  padding: 8px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 0 10px;
+  border: 1px solid #605DEC;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  background-color: transparent;
+}
+
+.social-button:hover {
+  background-color: transparent;
+}
+
+.social-button-content {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+}
+
+.social-icon {
+  margin-right: 10px;
+  font-size: 18px;
+  float: left;
+  margin-left: 0;
+}

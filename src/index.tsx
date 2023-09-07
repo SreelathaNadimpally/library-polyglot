@@ -22,5 +22,5 @@ export { SignUpForm };
 import OTPComponent from './components/OTP-Component';
 export { OTPComponent };
 
-import {TripmaSignUp} from './components/Tripma-SignUp';
+import TripmaSignUp from './components/Tripma-SignUp';
 export default TripmaSignUp;

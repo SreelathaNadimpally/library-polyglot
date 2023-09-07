@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import TripmaSignUp, { SignUpProps } from '../src/components/Tripma-SignUp';
+import TripmaSignUp, { SignUpProps } from '../components/Tripma-SignUp';
 
 export default {
   title: 'Components/TripmaSignUp',

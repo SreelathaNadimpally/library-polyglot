@@ -1,7 +1,6 @@
 import React from 'react';
 import { StoryFn, Meta } from  '@storybook/react';
-
-import OTPComponent, { OTPProps } from '../src/components/OTP-Component';
+import OTPComponent, { OTPProps } from '../components/OTP-Component';
 
 export default {
   title: 'Components/OTPComponent',

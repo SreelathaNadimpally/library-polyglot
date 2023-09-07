@@ -1,6 +1,6 @@
 import React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
-import Button, { ButtonProps } from '../src/components/Button';
+import { StoryFn } from '@storybook/react';
+import Button, { ButtonProps } from '../components/Button';
 
 interface ExtendedButtonProps extends ButtonProps {
   variant: "default" | "primary" | "success" | "danger" | "warning";

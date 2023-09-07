@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import { PasswordInputProps } from '../src/components/Password-Input';
-import PasswordInput from '../src/components/Password-Input';
+import { PasswordInputProps } from '../components/Password-Input';
+import PasswordInput from '../components/Password-Input';
 
 export default {
     title: 'Components/PasswordInput',

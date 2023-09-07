@@ -7,20 +7,27 @@ export interface EmailInputProps {
     placeholder?: string;
     disabled?: boolean;
     required?: boolean;
-    name:string;
-    className?:string;
+    name: string;
+    className?: string; 
 }
 
-const EmailInput: React.FC<EmailInputProps> = ({ label, value, onChange, placeholder, disabled }) => {
+const EmailInput: React.FC<EmailInputProps> = ({ label, value, onChange, placeholder, disabled, name, className }) => {
     const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
         onChange(newValue);
     };
 
     return (
-        <div>
+        <div className={className}> 
             <label>{label}</label>
-            <input type="Email" value={value} onChange={handleEmailChange} placeholder={placeholder} disabled={disabled} />
+            <input
+                type="email"
+                name={name}
+                value={value}
+                onChange={handleEmailChange}
+                placeholder={placeholder}
+                disabled={disabled}
+            />
         </div>
     );
 };

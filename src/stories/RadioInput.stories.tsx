@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import RadioInput, { RadioInputProps } from '../src/components/RadioInput';
+import RadioInput, { RadioInputProps } from '../components/RadioInput';
 
 export default {
   title: 'RadioButton',

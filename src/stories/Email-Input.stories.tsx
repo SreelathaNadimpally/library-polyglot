@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { Meta, StoryFn } from '@storybook/react';
-import EmailInput, { EmailInputProps } from '../src/components/Email-Input';
+import EmailInput, { EmailInputProps } from '../../src/components/Email-Input';
 
 export default {
     title: 'Components/EmailInput',

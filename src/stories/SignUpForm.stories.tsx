@@ -17,5 +17,5 @@ const errorsWithMessages = {
 };
 
 storiesOf('SignUpForm', module)
-  .add('default', () => <SignUpFormWrapper errors={defaultErrors} />)
-  .add('with errors', () => <SignUpFormWrapper errors={errorsWithMessages} />);
+  .add('default', () => <SignUpFormWrapper initialErrors={defaultErrors} />)
+  .add('with errors', () => <SignUpFormWrapper initialErrors={errorsWithMessages} />);

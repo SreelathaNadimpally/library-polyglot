@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import CheckboxInput, { CheckboxInputProps } from '../src/components/CheckBox-Input';
+import CheckboxInput, { CheckboxInputProps } from '../components/CheckBox-Input';
 
 export default {
     title: 'Components/CheckboxInput',
