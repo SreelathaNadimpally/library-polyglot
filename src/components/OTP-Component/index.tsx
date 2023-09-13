@@ -4,9 +4,11 @@ export interface OTPProps {
   onVerify: (otp: string) => void;
   onResend: () => void;
   resent: boolean;
+  title?: string;
+  onSignUp: () => void; 
 }
 
-const OTPComponent: React.FC<OTPProps> = ({ onVerify, onResend, resent }) => {
+const OTPComponent: React.FC<OTPProps> = ({ onVerify, onResend, resent, title = 'OTP Verification' }) => {
   const [otp, setOTP] = useState('');
 
   const handleOTPChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -23,7 +25,7 @@ const OTPComponent: React.FC<OTPProps> = ({ onVerify, onResend, resent }) => {
   return (
     <div className="Otp-Page" style={styles.container}>
       <div style={styles.innerContainer}>
-        <h2 style={styles.heading}>OTP Verification</h2>
+        <h2 style={styles.heading}>{title}</h2>
         <p>Enter the OTP sent to your <b>email</b></p>
         <form>
           <input

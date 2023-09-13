@@ -21,8 +21,9 @@ interface SignUpFormProps {
   };
 }
 
-const SignUpForm: React.FC<SignUpFormProps> = ({ initialErrors  }) => {
+const SignUpForm: React.FC<SignUpFormProps> = ({ initialErrors }) => {
   const [selectedValue, setSelectedValue] = useState<string>('male');
+  const [errors, setErrors] = useState(initialErrors);
 
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
@@ -30,7 +31,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ initialErrors  }) => {
     email: '',
     password: '',
   });
-  const [errors] = useState(initialErrors);
+
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({
@@ -60,37 +61,39 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ initialErrors  }) => {
   const handleEmailInputChangeWrapper = (value: string) => {
     handleEmailInputChange(value);
   };
-
-  function onErrorsChange(_arg0: {}) {
-    throw new Error('Function not implemented.');
-  }
   
- const handleContinueClick = () => {
-  const newErrors: Partial<FormData> = {};
-  // Validate form data
-  if (formData.firstName.trim() === '') {
-    newErrors.firstName = 'First name is required';
-  }
-  if (formData.lastName.trim() === '') {
-    newErrors.lastName = 'Last name is required';
-  }
-  if (formData.email.trim() === '') {
-    newErrors.email = 'Email is required';
-  }
-  if (formData.password.trim() === '') {
-    newErrors.password = 'Password is required';
+  function onErrorsChange(newErrors: Partial<FormData>) {
+    setErrors({
+      firstName: newErrors.firstName || '', 
+      lastName: newErrors.lastName || '',
+      email: newErrors.email || '',         
+      password: newErrors.password || '',   
+    });
   }
 
-  if (Object.keys(newErrors).length > 0) {
-    // There are errors, update the errors prop (not state)
-    // This will pass the errors back to the parent component
-    onErrorsChange(newErrors);
-  } else {
-    // No errors, clear the errors prop
-    onErrorsChange({});
-  }
-};
-
+  const handleContinueClick = () => {
+    const newErrors: Partial<FormData> = {};
+    // Validate form data
+    if (formData.firstName.trim() === '') {
+      newErrors.firstName = 'First name is required';
+    }
+    if (formData.lastName.trim() === '') {
+      newErrors.lastName = 'Last name is required';
+    }
+    if (formData.email.trim() === '') {
+      newErrors.email = 'Email is required';
+    }
+    if (formData.password.trim() === '') {
+      newErrors.password = 'Password is required';
+    }
+    if (Object.keys(newErrors).length > 0) {
+      // Call the onErrorsChange function to update the errors state
+      onErrorsChange(newErrors);
+    } else {
+      // Clear the errors state by setting it to the initial state
+      setErrors(initialErrors);
+    }
+  };
 
   return (
     <>
@@ -193,4 +196,3 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ initialErrors  }) => {
 };
 
 export default SignUpForm;
-

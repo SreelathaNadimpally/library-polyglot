@@ -8,6 +8,8 @@ import AppleIconSvg from "../Icons/AppleIcon/Index";
 import CloseIcon from "../Icons/CloseIcon/index";
 import CheckboxInput from "../CheckBox-Input";
 
+
+
 export interface SignUpProps {
   onSignUp: (
     emailOrPhone: string,
@@ -15,6 +17,7 @@ export interface SignUpProps {
     agreeToTerms: boolean,
     sendDealAlerts: boolean
   ) => void;
+  
 }
 
 const TripmaSignUp: React.FC<SignUpProps> = ({ onSignUp }) => {
